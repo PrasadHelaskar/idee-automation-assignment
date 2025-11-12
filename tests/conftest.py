@@ -21,10 +21,11 @@ def driver():
     # chrome_options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=chrome_options)
+    driver.execute_cdp_cmd("Page.enable", {})
     driver.execute_cdp_cmd('Network.enable', {})
     driver.execute_cdp_cmd("Debugger.setSkipAllPauses", {"skip": True})
     driver.execute_cdp_cmd("Page.setLifecycleEventsEnabled",{"enabled": True})
-    driver.execute_cdp_cmd("Page.enable", {})
+    # driver.execute_cdp_cmd("Emulation.setPageScaleFactor", {"pageScaleFactor": 0.8})
     driver.maximize_window()
 
     yield driver

@@ -1,4 +1,7 @@
+import time
+
 from selenium.webdriver.common.by import By
+
 from utils.baseMethods import BaseMethods
 from utils.logger import Logger
 
@@ -12,6 +15,8 @@ class AutomationProjectTabs(BaseMethods):
     __private_test_automation_project=(By.CSS_SELECTOR, "img[alt='Test automation project']")
     __private_details_section=(By.ID, "detailsSection")
     __private_video_section=(By.CSS_SELECTOR, "a[id='videosSection']")
+    __private_button_video_play=(By.CSS_SELECTOR, "button[class='icon-width-gen wds-cursor-pointer']")
+    __private_button_sign_out=(By.ID, "signOutSideBar")
 
     def click_all_title_logo(self):
         """
@@ -33,6 +38,18 @@ class AutomationProjectTabs(BaseMethods):
 
     def click_video_section(self):
         """
-            Method created for to click on details scetion to contiune on next page.
+            Method created for to click on video scetion to contiune on next page.
         """
         self.click(self.__private_video_section)
+
+    def click_video_play(self):
+        """
+            Method created for to click on video play button.
+        """
+        self.click(self.__private_button_video_play)
+    
+    def click_sign_out(self):
+        """
+            Method created for to click on sign out button to contiune sign-out.
+        """
+        self.click(self.__private_button_sign_out)

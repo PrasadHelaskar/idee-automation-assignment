@@ -124,9 +124,9 @@ class BaseMethods:
             element.click()
 
         except ElementClickInterceptedException as e:
-                    log.error("Failed to interact with the elemet in the view port")
-                    log.info(e)
-                    sys.exit()
+            log.error("Failed to interact with the elemet in the view port")
+            log.info(e)
+            sys.exit()
 
     def send_keys(self, locator, text):
         """
@@ -230,7 +230,7 @@ class BaseMethods:
             element = self.find_element_wait(locator)
             value=element.get_attribute(attribute)
             return value if value else None
-        
+
         except NoSuchElementException as e :
             log.error("Failed to Locate the elemet in the view port")
             log.info(e)
