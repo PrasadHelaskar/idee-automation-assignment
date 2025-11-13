@@ -1,5 +1,9 @@
 import pytest
+
 from selenium import webdriver
+from utils.logger import Logger
+
+log=Logger().get_logger(__name__)
 
 @pytest.fixture(scope='session')
 def driver():
@@ -21,12 +25,16 @@ def driver():
     # chrome_options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=chrome_options)
+    driver.execute_cdp_cmd("Page.enable", {})
     driver.execute_cdp_cmd('Network.enable', {})
     driver.execute_cdp_cmd("Debugger.setSkipAllPauses", {"skip": True})
     driver.execute_cdp_cmd("Page.setLifecycleEventsEnabled",{"enabled": True})
-    driver.execute_cdp_cmd("Page.enable", {})
+    # driver.execute_cdp_cmd("Emulation.setPageScaleFactor", {"pageScaleFactor": 0.8})
     driver.maximize_window()
+
+    log.info("Webdriver is Initited with the Brower Window")
 
     yield driver
 
+    log.info("The Execution is Completed and returned Hence clearing the instances")
     driver.quit()
