@@ -20,15 +20,18 @@ class LoginPage(BaseMethods):
                 text (string) : Text to input the Pin in the located element
         """
         self.send_keys(self.__private_text_box_pin, pin)
+        log.info("Entering the PIN is completed")
 
     def click_sign_in(self):
         """
             Method created for to click on sign-in button to start the sign-in backend validation.
         """
         self.click(self.__private_button_sign_in)
+        log.info("Clicked Sign-up button")
 
     def click_accept_cookies(self):
         """
             Method created for to click on accept button to remove the cookie consent modal.
         """
         self.click(self.__private_button_accept_cookie)
+        log.info("Accepted the cookies form the the Website")

@@ -6,11 +6,11 @@ from selenium.webdriver import ActionChains
 from utils.baseMethods import BaseMethods
 from utils.logger import Logger
 
-log=Logger().get_logger()
+log=Logger().get_logger(__name__)
 
 class VideoActions(BaseMethods):
     """
-        Class Created for the elements Present in the video page to perform Action that needs to be done
+        Class Created for the elements Present in the video page to perform Action using the actions chains.
     """
     __private_div_jw_player=(By.XPATH, "//div[@class='jw-reset jw-old-rail']")
     __private_button_play=(By.CSS_SELECTOR, "div[class='jw-icon jw-icon-inline jw-button-color jw-reset jw-icon-playback']")
@@ -27,6 +27,7 @@ class VideoActions(BaseMethods):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_play)).click().perform()
+        log.info("Clicked the Play Button")
 
     def click_pause_button(self):
         """
@@ -35,6 +36,7 @@ class VideoActions(BaseMethods):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_play)).click().perform()
+        log.info("Clicked the Pause Button")
 
     def sound_adjustments(self):
         """
@@ -44,8 +46,10 @@ class VideoActions(BaseMethods):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_sound)).perform()
+        log.info("Hovering on the sound button")
         time.sleep(2)
         actions.move_to_element(self.find_element_wait(self.__private_sound_knob)).click_and_hold().move_by_offset(50,0).release().perform()
+        log.info("Adjested the sound percentage to 50%")
 
     def click_settings_button(self):
         """
@@ -54,19 +58,22 @@ class VideoActions(BaseMethods):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_setting)).click().perform()
+        log.info("Clicked the settings icon to open the resoultions tab")
 
     def click_480p_resolution(self):
         """
-            Method created for to click on 480 resulation.
+            Method created for to click on 480 resolution.
         """
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_480p)).click().perform()
+        log.info("Clicked the 480p to make video 480p resolution")
 
     def click_720p_resolution(self):
         """
-            Method created for to click on 720 resulation.
+            Method created for to click on 720 resolution.
         """
         actions = ActionChains(self.driver)
         actions.move_to_element(self.find_element_wait_presence(self.__private_div_jw_player)).perform()
         actions.move_to_element(self.find_element_wait(self.__private_button_720p)).click().perform()
+        log.info("Clicked the 720p to make video 7200p resolution")

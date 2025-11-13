@@ -1,5 +1,9 @@
 import pytest
+
 from selenium import webdriver
+from utils.logger import Logger
+
+log=Logger().get_logger(__name__)
 
 @pytest.fixture(scope='session')
 def driver():
@@ -28,6 +32,9 @@ def driver():
     # driver.execute_cdp_cmd("Emulation.setPageScaleFactor", {"pageScaleFactor": 0.8})
     driver.maximize_window()
 
+    log.info("Webdriver is Initited with the Brower Window")
+
     yield driver
 
+    log.info("The Execution is Completed and returned Hence clearing the instances")
     driver.quit()

@@ -24,6 +24,7 @@ class TestLogin():
         load_dotenv("config/.env")
         # Loading the URL from the Json file
         driver.get(jsonRead("URL"))
+        log.info("Staring the Automation on the given URL")
 
         # Initializing the POM class LoginPage
         login=LoginPage(driver)
@@ -31,4 +32,4 @@ class TestLogin():
         login.type_text_box_pin(os.getenv("PIN")) # Entering the PIN in text box fetched from .env file
         time.sleep(5) # Forced sleep reason: To show the action done by the script
         login.click_sign_in()  # Clicking the sign-in button
-        login.click_accept_cookies() # accepting the cookies prevent it reciving click 
+        login.click_accept_cookies() # accepting the cookies prevent pop reciving clicks 
