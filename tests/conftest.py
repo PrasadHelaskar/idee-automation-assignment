@@ -32,7 +32,7 @@ def driver():
     # driver.execute_cdp_cmd("Emulation.setPageScaleFactor", {"pageScaleFactor": 0.8})
     driver.maximize_window()
 
-    log.info("Webdriver is Initited with the Brower Window")
+    log.info("Webdriver is Initited with the Browser Window")
 
     yield driver
 
