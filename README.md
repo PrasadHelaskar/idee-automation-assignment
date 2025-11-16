@@ -1,4 +1,4 @@
-# Idee Automation Assignment
+# Indee Automation Assignment
 
 This repository contains UI automation scripts developed using **Python**, **Pytest**, and **Selenium** for the Idee assignment.
 
@@ -29,8 +29,8 @@ code/ </br>
 ## 🔧 Setup
 
 ```bash
-git clone https://github.com/PrasadHelaskar/idee-automation-assignment.git
-cd idee-automation-assignment
+git clone https://github.com/PrasadHelaskar/indee-automation-assignment.git
+cd indee-automation-assignment
 
 python3 -m venv venv
 source venv/bin/activate
