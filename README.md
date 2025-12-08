@@ -15,6 +15,14 @@ This repository contains UI automation scripts developed using **Python**, **Pyt
 - Page Object Model (POM) structure  
 
 ---
+## 🔰 Tech Stack & Badges
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-UI_Automation-brightgreen?logo=selenium)
+![Pytest](https://img.shields.io/badge/Pytest-Framework-green?logo=pytest)
+![Video Player Testing](https://img.shields.io/badge/JWPlayer-Testing-purple)
+![Assignment](https://img.shields.io/badge/Interview-Assignment-important)
+![Allure](https://img.shields.io/badge/Allure-Report-ff69b4?logo=allure)
 
 ## 📁 Project Structure
 
