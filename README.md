@@ -22,7 +22,6 @@ This repository contains UI automation scripts developed using **Python**, **Pyt
 ![Pytest](https://img.shields.io/badge/Pytest-Framework-green?logo=pytest)
 ![Video Player Testing](https://img.shields.io/badge/JWPlayer-Testing-purple)
 ![Assignment](https://img.shields.io/badge/Interview-Assignment-important)
-![Allure](https://img.shields.io/badge/Allure-Report-ff69b4?logo=allure)
 
 ## 📁 Project Structure
 
